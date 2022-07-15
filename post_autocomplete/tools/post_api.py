@@ -19,8 +19,7 @@ def get_token():
     latest_token = PostAccessToken.objects.filter(expires__gt=now).last()
 
     if not latest_token:
-        token_response = requests.request(
-            'GET',
+        token_response = requests.get(
             urljoin(settings.POST_AUTOCOMPLETE_URL, 'token'),
             auth=HTTPBasicAuth(settings.POST_DATAFACTORY_USER, settings.POST_DATAFACTORY_PASSWORD)
         )
