@@ -58,6 +58,26 @@ Finally, there are 3 entries that need to be added to your settings.py
 
 I recommend using `os.getenv()` or something similar to set username and password
 
+## Routes
+
+  - `post/search-buildings`
+    - request params:
+      - `postal_code`, string, maximum length: 10, optional
+      - `city`, string, maximum length: 128, optional
+      - `district`, string, maximum length: 128, optional
+      - `street`, string, maximum length: 128, optional
+      - `house_number`, string, maximum length: 128, optional
+      - `distribution_code`, string, maximum length: 128, optional
+      - `combined`, string, maximum length: 128, optional
+    - response:
+      - `uuid`, string
+      - `postalCode`, string
+      - `city`, string
+      - `district`, string
+      - `street`, string
+      - `houseNumber`, string
+      - `distributionCode`, string
+
 ## Contributing
 
 So far, I've only implemented the authorization workflow and search buildings endpoint for Germany, because it fits my needs.
