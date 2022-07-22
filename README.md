@@ -48,13 +48,14 @@ To use the provided endpoints, you'll have to add the following to `urls.py`:
 
 Adjust the route as needed. In this example, the buildings endpoint is available under `/api/post/search-buildings`
 
-Finally, there are 3 entries that need to be added to your settings.py
+Finally, there are 4 entries that need to be added to your settings.py
 
-| setting                   | description                                                 |
-|---------------------------|-------------------------------------------------------------|
-| POST_AUTOCOMPLETE_URL     | You'll get that one from their provided documentation.      |
-| POST_DATAFACTORY_USER     | The username, also used for logging into the web interface. |
-| POST_DATAFACTORY_PASSWORD | The password, also used for logging into the web interface. |
+| setting                   | description                                                                              |
+|---------------------------|------------------------------------------------------------------------------------------|
+| POST_AUTOCOMPLETE_URL     | You'll get that one from their provided documentation.                                   |
+| POST_DATAFACTORY_USER     | The username, also used for logging into the web interface.                              |
+| POST_DATAFACTORY_PASSWORD | The password, also used for logging into the web interface.                              |
+| MOCK_API                  | Simple mock interface for API calls. Useful for Unit Tests. Must be either True or False |
 
 I recommend using `os.getenv()` or something similar to set username and password
 

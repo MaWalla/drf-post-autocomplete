@@ -34,6 +34,7 @@ PACKAGES = [
     'post_autocomplete.migrations',
     'post_autocomplete.models',
     'post_autocomplete.serializer',
+    'post_autocomplete.tests',
     'post_autocomplete.tools',
     'post_autocomplete.views',
 ]
@@ -41,7 +42,7 @@ PACKAGES = [
 
 setup(
     name='drf-post-autocomplete',
-    version='2022.1',
+    version='2022.1.1',
     author='Max Walaschewski',
     author_email='mawalla@protonmail.com',
     description='API implementation for Autocomplete 2.0 from Deutsche Post Direkt',
