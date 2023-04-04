@@ -57,7 +57,11 @@ Finally, there are 4 entries that need to be added to your settings.py
 | POST_DATAFACTORY_PASSWORD | The password, also used for logging into the web interface.                              |
 | MOCK_API                  | Simple mock interface for API calls. Useful for Unit Tests. Must be either True or False |
 
-I recommend using `os.getenv()` or something similar to set username and password
+I recommend using `os.getenv()` or something similar to set username and password.
+
+
+**IMPORTANT:** Wrong username or password will lead to an empty array (`[]`) as response, without explicit error!
+
 
 ## Routes
 

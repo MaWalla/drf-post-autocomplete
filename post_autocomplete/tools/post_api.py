@@ -33,7 +33,7 @@ def get_token():
                 auth=HTTPBasicAuth(settings.POST_DATAFACTORY_USER, settings.POST_DATAFACTORY_PASSWORD),
             )
 
-        content = json.loads(token_response.content)
+        content = json.loads(token_response.content or 'null')
 
         if content:
             access_token = PostAccessToken(
@@ -54,9 +54,12 @@ def get_token():
 
 
 def autocomplete_api_call(endpoint, params, recursion=False):
-    token_object = get_token()
     url = urljoin(settings.POST_AUTOCOMPLETE_URL, endpoint)
-    headers = {'Authorization': f'Bearer {token_object.token}'}
+
+    headers = {}
+    token_object = get_token()
+    if token_object:
+        headers = {'Authorization': f'Bearer {token_object.token}'}
 
     if settings.MOCK_API:
         response = mock_request.handle_request(url, 'GET', headers, params)

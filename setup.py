@@ -42,7 +42,7 @@ PACKAGES = [
 
 setup(
     name='drf-post-autocomplete',
-    version='2022.1.1',
+    version='2023.1.1',
     author='Max Walaschewski',
     author_email='mawalla@protonmail.com',
     description='API implementation for Autocomplete 2.0 from Deutsche Post Direkt',
